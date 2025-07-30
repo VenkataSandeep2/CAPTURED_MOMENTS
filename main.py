@@ -70,7 +70,7 @@ def home():
     """
     Renders the home page (home.html) which provides options to login, signup, etc.
     """
-    return render_template('MultipleFiles/home.html')
+    return render_template('multiplefiles/home.html')
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -235,7 +235,7 @@ def booking():
             # You might want to add logic to ensure the date is in the future
             if booking_date_obj < datetime.now():
                 flash('Booking date cannot be in the past.', 'danger')
-                return render_template('MultipleFiles/booking.html')
+                return render_template('multiplefiles/booking.html')
         except ValueError:
             flash('Invalid date format. Please use YYYY-MM-DD.', 'danger')
             return render_template('multiplefiles/booking.html')
@@ -269,7 +269,7 @@ def booking():
 
         flash('Your booking request has been received!', 'success')
         # Render the booking page again, but with confirmation message
-        return render_template('MultipleFiles/booking.html',
+        return render_template('multiplefiles/booking.html',
                                message="Booking Confirmed!",
                                name=name, location=location, date=date_str,
                                type=booking_type, price=price)
