@@ -3,7 +3,12 @@ services:
     name: capture-moments
     env: python
     plan: free
+    region: oregon
+    branch: main
     buildCommand: "pip install -r requirements.txt"
     startCommand: "gunicorn main:app"
+    envVars:
+      - key: FLASK_ENV
+        value: production
     pythonVersion: 3.10
     autoDeploy: true
