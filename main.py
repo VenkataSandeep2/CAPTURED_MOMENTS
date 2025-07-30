@@ -227,7 +227,7 @@ def booking():
         # Basic validation
         if not all([name, location, date_str, booking_type]):
             flash('All booking fields are required.', 'danger')
-            return render_template('MultipleFiles/booking.html')
+            return render_template('multiplefiles/booking.html')
 
         try:
             # Attempt to parse the date to ensure it's valid
