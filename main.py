@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, flash, ses
 import os
 from datetime import datetime
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='templates', static_folder='static')
 # Generate a strong secret key for session management.
 # In a production environment, this should be loaded from an environment variable
 # or a configuration file, not hardcoded.
