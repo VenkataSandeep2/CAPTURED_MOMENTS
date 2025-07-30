@@ -63,7 +63,7 @@ gallery_images = [
 
 @app.route('/')
 def index():
-    return render_template('MultipleFiles/index.html')
+    return render_template('multiplefiles/index.html')
 
 @app.route('/home')
 def home():
@@ -91,7 +91,7 @@ def login():
             return redirect(url_for('dashboard'))
         else:
             flash('Invalid email or password.', 'danger')
-    return render_template('MultipleFiles/login.html')
+    return render_template('multiplefiles/login.html')
 
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
@@ -116,7 +116,7 @@ def signup():
             users[email] = {"password": password, "name": name}
             flash('Account created successfully! Please log in.', 'success')
             return redirect(url_for('login')) # Redirect to login page after successful signup
-    return render_template('MultipleFiles/signup.html')
+    return render_template('multiplefiles/signup.html')
 
 @app.route('/forgot_password', methods=['GET', 'POST'])
 def forgot_password():
@@ -132,7 +132,7 @@ def forgot_password():
             flash(f'If {email} is registered, a password reset link has been sent (simulated).', 'success')
         else:
             flash('Email not found.', 'danger')
-    return render_template('MultipleFiles/forgot_password.html')
+    return render_template('multiplefiles/forgot_password.html')
 
 @app.route('/dashboard')
 def dashboard():
@@ -161,14 +161,14 @@ def about_us():
     """
     Renders the 'About Us' page.
     """
-    return render_template('MultipleFiles/about_us.html')
+    return render_template('multiplefiles/about_us.html')
 
 @app.route('/terms')
 def terms():
     """
     Renders the 'Terms & Conditions' page.
     """
-    return render_template('MultipleFiles/terms.html')
+    return render_template('multiplefiles/terms.html')
 
 @app.route('/feedback')
 def feedback():
@@ -177,7 +177,7 @@ def feedback():
     Note: The HTML file is named feedback.html but displays reviews.
     If you want a form to submit feedback, you'd add POST method logic here.
     """
-    return render_template('MultipleFiles/feedback.html', reviews=feedback_reviews)
+    return render_template('multiplefiles/feedback.html', reviews=feedback_reviews)
 
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
@@ -205,7 +205,7 @@ def contact():
             print(f"---------------------------")
             flash('Your message has been sent successfully! We will get back to you soon.', 'success')
             return redirect(url_for('contact')) # Redirect to clear the form
-    return render_template('MultipleFiles/contact.html')
+    return render_template('multiplefiles/contact.html')
 
 @app.route('/booking', methods=['GET', 'POST'])
 def booking():
@@ -238,7 +238,7 @@ def booking():
                 return render_template('MultipleFiles/booking.html')
         except ValueError:
             flash('Invalid date format. Please use YYYY-MM-DD.', 'danger')
-            return render_template('MultipleFiles/booking.html')
+            return render_template('multiplefiles/booking.html')
 
         # Dummy price calculation based on type
         price_map = {
@@ -273,7 +273,7 @@ def booking():
                                message="Booking Confirmed!",
                                name=name, location=location, date=date_str,
                                type=booking_type, price=price)
-    return render_template('MultipleFiles/booking.html')
+    return render_template('multiplefiles/booking.html')
 
 @app.route('/booking_history')
 def booking_history():
@@ -285,14 +285,14 @@ def booking_history():
         return redirect(url_for('login'))
     # In a real application, you would filter bookings specific to the logged-in user.
     # For this demo, we're showing all dummy bookings.
-    return render_template('MultipleFiles/booking_history.html', bookings=bookings)
+    return render_template('multiplefiles/booking_history.html', bookings=bookings)
 
 @app.route('/profile')
 def profile():
     """
     Displays the photographer profiles.
     """
-    return render_template('MultipleFiles/profile.html')
+    return render_template('multiplefiles/profile.html')
 
 @app.route('/gallery')
 def gallery():
@@ -304,7 +304,7 @@ def photographer_categories():
     """
     Displays the different photographer categories/styles.
     """
-    return render_template('MultipleFiles/photographer_categories.html')
+    return render_template('multiplefiles/photographer_categories.html')
 
 # --- Error Handlers (Optional but good practice) ---
 @app.errorhandler(404)
