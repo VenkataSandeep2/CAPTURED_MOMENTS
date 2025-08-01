@@ -27,7 +27,7 @@ bookings = [
         "booking_time": "14:00",
         "photographer_name": "Sana",
         "status": "Confirmed",
-        "price": 12000
+        "price": 120000
     },
     {
         "event_type": "Birthday",
@@ -35,7 +35,7 @@ bookings = [
         "booking_time": "10:30",
         "photographer_name": "Krithin",
         "status": "Pending",
-        "price": 7500
+        "price": 75000
     }
 ]
 
